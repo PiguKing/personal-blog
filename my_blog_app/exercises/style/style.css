@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-link {
+    text-decoration: none;
+}
+
+header {
+    min-height: 350px;
+    background-color: pink;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/spain.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header * {
+    z-index: 1;
+}
+
+header::after{
+    content: "";
+    position: absolute;     /* this is going to target the entire body component if not specified in the parent */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 0;
+}
+
+.profile-image {
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 50%;
+    background-image: url(/assets/profile.png);
+    background-size: cover;   
+}
+
+.profile-name {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.subtext {
+    margin-top: 8px;
+}
+
+.main {
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    max-width: 70%;
+    min-width: 600px;
+    width: 100%;
+    padding: 0 16px; 
+}
+
+.post {
+    margin: 2em 0;
+    height: 15em;
+    border: 1px solid #eaecee;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.post:hover {
+    transform: translate3d(0, -0.5rem, 0);
+    box-shadow: 0 2rem 5rem 0 rgba(0,0,0,0.1);
+}
+
+.post-image {
+    /* We don't need background-image anymore since we are setting it dynamically now */
+    /* background-image: url(https://images.unsplash.com/photo-1546146830-2cca9512c68e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80); */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-basis: 40%;
+}
+
+.post-content {
+    height: 100%;
+    flex-basis: 60%;
+    padding: 1em;
+}
+
+.post-date {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #a0aab4;
+}
+
+.post-title {
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+}
+
+.post-text {
+    display: block;
+    height: 50%;
+    width: 100%;
+    margin-top: 0.5em;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: #495057;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+footer {
+    min-height: 100px;
+    background-color: #eaecee70;
+    color: #929eaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.nav-button.new-post-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    background-color: #004186;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+    transition: all 0.25s ease;
+}
+
+.nav-button.new-post-button:hover {
+    background-color: #9bc6f5;
+}
